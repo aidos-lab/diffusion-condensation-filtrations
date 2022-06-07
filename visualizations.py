@@ -4,7 +4,7 @@ import pandas as pd
 import scipy as sp
 import dionysus as d
 import matplotlib.pyplot as plt
-import pecan as pc
+#import pecan as pc
 import sys
 import collections
 import re

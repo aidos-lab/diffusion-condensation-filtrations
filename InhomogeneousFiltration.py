@@ -5,7 +5,7 @@ import pandas as pd
 import scipy as sp
 import dionysus as d
 import matplotlib.pyplot as plt
-import pecan as pc
+#import pecan as pc
 import sys
 import os
 
@@ -54,7 +54,7 @@ class OperatorPowerFiltrationInhomogeneous:
             experiment_path [string]: path to the pecan .npz file.
             experiment_name [string]: name of the pecan .npz file .
             mode [string]: restng / non_resting. 
-            kernel[string]: gaussian_aniso / 'non' (gaussian)
+            kernel [string]: 'gaussian_aniso' / 'gaussian' (gaussian)
             e [float]: kernel bandwith 
             b [float]: gaussian_aniso exp
             t [int]: diffusion condensation time
@@ -77,6 +77,8 @@ class OperatorPowerFiltrationInhomogeneous:
         if kernel== 'gaussian_aniso':
             K_=kernel_gaussian_aniso_norm(K,b)
             K=K_
+        if kernel== 'gaussian':
+            K=K
         self.P_t=diffusion_operator(K)
         self.N=len(self.P_t)
         self.experiment_path=experiment_path
